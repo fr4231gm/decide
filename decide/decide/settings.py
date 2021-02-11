@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+import django_heroku
+django_heroku.settings(locals())
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -70,7 +72,19 @@ MODULES = [
     'voting',
 ]
 
-BASEURL = 'http://localhost:8000'
+APIS = {
+    'authentication': 'https://pruebadefensadecide.herokuapp.com/',
+    'base': 'https://pruebadefensadecide.herokuapp.com/',
+    'booth': 'https://pruebadefensadecide.herokuapp.com/',
+    'census': 'https://pruebadefensadecide.herokuapp.com/',
+    'mixnet': 'https://pruebadefensadecide.herokuapp.com/',
+    'postproc': 'https://pruebadefensadecide.herokuapp.com/',
+    'store': 'https://pruebadefensadecide.herokuapp.com/',
+    'visualizer': 'https://pruebadefensadecide.herokuapp.com/',
+    'voting': 'https://pruebadefensadecide.herokuapp.com/',
+}
+
+BASEURL = 'https://pruebadefensadecide.herokuapp.com/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
